@@ -1,0 +1,136 @@
+<form [formGroup]="socialForm" >
+  
+  <label class="checkbox-label ml-5" formArrayName="socialPreferences"
+    *ngFor="let genre of socialForm.controls['socialPreferences'].controls; let i = index">
+    <input type="checkbox" [formControlName]="i" (change)="onFilterChange($event,i,socialPreferences[i].genre)"
+      tabindex="0" role="button" id="1"  [(ngModel)]="genre.checked"  btnCheckbox>
+   
+    <span class="checkbox-custom rectangular"> {{socialPreferences[i].genre}}</span>
+
+  </label>
+</form>
+
+<accordion [closeOthers]="oneAtATime">
+  <accordion-group *ngFor="let group of groups" [heading]="group.title">
+    {{ group?.content }}
+    <ul>
+      <li>
+      <input type="text" [(ngModel)]="name" />
+      <button type="submit" class="btn btn-primary ml-3" (click)="onSend(group.title)">Send</button>
+      </li>
+    </ul>
+  </accordion-group>
+</accordion>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form [formGroup]="myForm">
+  <input type="hidden" formControlName="$key">
+  <div class="btn-group">
+    <div class="ml-5">
+      <label for="">Gmail</label>
+      <input type="checkbox" id="1" [(ngModel)]="gmail" [class.active]="myForm.value.left" btnCheckbox
+        formControlName="left" tabindex="0" (change)="onFilterChange($event)" role="button">
+    </div>
+    <div class="ml-5">
+      <label for="">Facebook</label>
+      <input type="checkbox" id="2" [(ngModel)]="facebook" [class.active]="myForm.value.middle" btnCheckbox
+        formControlName="middle" tabindex="1" (change)="onFilterChange($event)" role="button">
+    </div>
+    <div class="ml-5">
+      <label for="">LinkedIn</label>
+      <input type="checkbox" id="2" [(ngModel)]="linkedIn" [class.active]="myForm.value.right" btnCheckbox
+        formControlName="right" tabindex="2" (change)="onFilterChange($event)" role="button">
+    </div>
+  </div>
+</form>
+<button class="btn btn-primary" type="submit" (click)="onSubmit(myForm)">save</button>
+
+<accordion>
+  <accordion-group heading="Gmail" *ngIf="gmail" (isOpenChange)="log($event)">
+    <form [formGroup]="mySubForm">
+      <input type="hidden" formControlName="$key">
+      <div class="btn-group">
+        <input type="text" formControlName="gmailId" [(ngModel)]="gmailId" />
+        <button class="btn btn-primary" type="submit" (click)="onSend(mySubForm)">Send</button>
+      </div>
+    </form>
+  </accordion-group>
+  <accordion-group heading="Facebook" *ngIf="facebook" (isOpenChange)="facebookLog($event)">
+    <p>Facebook Login</p>
+  </accordion-group>
+  <accordion-group heading="LinkedIn" *ngIf="linkedIn" (isOpenChange)="linkedInLog($event)">
+    <p>LinkedIn Login</p>
+  </accordion-group>
+</accordion> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <pre class="card card-block card-header">{{myForm.value | json}}</pre> -->

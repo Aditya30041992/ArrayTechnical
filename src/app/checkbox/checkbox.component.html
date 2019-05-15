@@ -1,0 +1,20 @@
+<h2>Checkbox list example</h2>
+
+<ul>
+  <li *ngFor="let item of list; let i = index">
+    <input type="checkbox" [(ngModel)]="item.checked" (change)="addItems(item)" >{{item.title}}
+  </li>
+</ul>
+<!-- (change)="addItems($event,i,list[i].item)" -->
+<accordion [closeOthers]="oneAtATime">
+  <accordion-group *ngFor="let group of this.sorting" [heading]="group.title">
+    {{ group?.title }}
+    <ul>
+      <li>
+        <input type="email"  [formControl]="control"  name="email" [(ngModel)]="email" pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail||facebook||ansh-system)?(\.in||\.com)$" />
+        <button type="submit"   [disabled]="control.invalid" class="btn btn-primary ml-3" (click)='onSend(group.title)'>Send</button>
+        <div *ngIf="control.invalid " style="color: red">Domain name must be gmail.com</div>
+      </li>
+    </ul>
+  </accordion-group>
+</accordion>

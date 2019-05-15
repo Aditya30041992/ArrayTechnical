@@ -1,0 +1,24 @@
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  margin-top: 20px;
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;
+  background-color: aqua;
+}
+
+/* Might want to wrap a span around your checkbox text */
+.checkbox-custom rectangular
+{
+  /* Checkbox text */
+  margin-top: 15px;
+  font-size: 110%;
+  display: inline;
+}
+
+
+
